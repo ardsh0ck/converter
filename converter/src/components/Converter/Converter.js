@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import styles from './Converter.module.scss'
 import { ReactComponent as ExchangeIcon } from '../../assets/img/icon-exchange.svg'
 
@@ -9,6 +9,11 @@ const Converter = ({ data }) => {
   const [toCurrency, setToCurrency] = useState(1)
 
   const getValue = Number(fromAmount * (fromCurrency / toCurrency)).toFixed(2)
+  console.log(getValue)
+
+  useEffect(() => {
+    setToAmount(getValue)
+  }, [getValue])
 
   return (
     <form className={styles.converter}>
@@ -48,7 +53,7 @@ const Converter = ({ data }) => {
             className={styles.converterInput}
             type="number"
             id="get"
-            value={getValue}
+            value={toAmount}
             onChange={(event) => setToAmount(event.target.value)}
           />
         </label>
