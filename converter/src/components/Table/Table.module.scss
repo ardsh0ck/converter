@@ -1,0 +1,47 @@
+.table {
+  @apply mb-10 mx-auto p-6 rounded-lg bg-stone-100 w-full max-w-6xl;
+
+  &Table {
+    @apply w-full border-collapse table-fixed text-base text-center;
+
+    thead {
+      @apply sticky top-0;
+
+      th,
+      td {
+        @apply p-4 text-center;
+      }
+    }
+
+    tr {
+      @apply border-b border-b-stone-200;
+
+      td:first-of-type {
+        @apply p-4 text-center;
+      }
+    }
+
+    tbody {
+      tr:last-of-type {
+        @apply border-none;
+      }
+    }
+
+    input {
+      @apply block w-auto mx-auto;
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        @apply appearance-none m-0;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  &Error {
+    @apply my-40 text-center text-2xl;
+  }
+}

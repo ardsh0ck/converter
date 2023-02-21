@@ -1,0 +1,55 @@
+.tableInput {
+  @apply py-4;
+
+  &Inner {
+    @apply relative inline-flex;
+  }
+
+  input {
+    @apply text-center bg-transparent py-2 px-4 border border-transparent;
+
+    &.active {
+      @apply border-stone-200 bg-white;
+    }
+  }
+
+  &Error {
+    @apply mt-2 text-xs text-red-600;
+  }
+
+  &Buttons {
+    @apply absolute right-0 top-0 -translate-y-1/2 translate-x-1/2 hidden items-center;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      .tableInputButtons {
+        @apply flex;
+      }
+    }
+  }
+
+  &Button {
+    @apply flex flex-row items-center justify-center w-6 h-6 border-none transition-colors;
+
+    &Icon {
+      @apply w-4 h-4;
+    }
+
+    &Pencil {
+      @apply text-stone-500 hover:text-stone-600;
+    }
+
+    &Check {
+      @apply text-green-600 hover:text-green-700;
+
+      &:disabled {
+        @apply text-stone-300;
+      }
+    }
+
+    &Times {
+      @apply text-red-600 hover:text-red-700;
+    }
+  }
+}

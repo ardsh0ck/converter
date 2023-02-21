@@ -1,0 +1,21 @@
+.header {
+  @apply mb-10 px-10 py-8 bg-stone-800;
+
+  &Logo {
+    @apply flex items-center justify-center md:justify-start gap-2  text-sm;
+
+    span {
+      &:first-of-type {
+        @apply font-bold text-white;
+      }
+
+      &:last-of-type {
+        @apply text-stone-400;
+      }
+    }
+
+    &Icon {
+      @apply w-6 h-6 text-stone-200;
+    }
+  }
+}
