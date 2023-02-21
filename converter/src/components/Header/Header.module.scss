@@ -1,5 +1,5 @@
 .header {
-  @apply mb-10 px-10 py-8 bg-stone-800;
+  @apply mb-10 px-10 p-4 md:py-8 bg-stone-800;
 
   &Logo {
     @apply flex items-center justify-center md:justify-start gap-2  text-sm;

@@ -20,7 +20,7 @@ const Table = ({ data, totalRequests, isLoading, error }) => {
         <table className={styles.tableTable}>
           <thead>
             <tr>
-              <th>Currency/Currency Date</th>
+              <th>Currency</th>
               <th>Buy</th>
               <th>Sell</th>
             </tr>

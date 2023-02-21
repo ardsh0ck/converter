@@ -1,27 +1,27 @@
 .table {
-  @apply mb-10 mx-auto p-6 rounded-lg bg-stone-100 w-full max-w-6xl;
+  @apply mb-10 mx-auto p-2 md:p-6 rounded-lg bg-stone-100 w-full max-w-6xl;
 
   &Table {
-    @apply w-full border-collapse table-fixed text-base text-center;
+    @apply w-full border-collapse table-fixed text-sm md:text-base text-center;
 
     thead {
-      @apply sticky top-0;
+      @apply sticky top-0 border-b border-b-stone-200 bg-stone-100;
 
       th,
       td {
-        @apply p-4 text-center;
-      }
-    }
-
-    tr {
-      @apply border-b border-b-stone-200;
-
-      td:first-of-type {
-        @apply p-4 text-center;
+        @apply p-2 md:p-4 text-center;
       }
     }
 
     tbody {
+      tr {
+        @apply border-b border-b-stone-200;
+
+        td:first-of-type {
+          @apply p-2 md:p-4 text-center;
+        }
+      }
+
       tr:last-of-type {
         @apply border-none;
       }

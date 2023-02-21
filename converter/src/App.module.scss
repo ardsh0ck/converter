@@ -2,6 +2,6 @@
   @apply flex flex-col h-screen;
 
   &Inner {
-    @apply px-10;
+    @apply px-4 md:px-10;
   }
 }
