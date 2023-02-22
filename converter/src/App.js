@@ -25,7 +25,7 @@ function App() {
       try {
         const response = await fetch(API_URL, requestOptions)
         const currency = await response.json()
-        setRequestCount(requestCount + 1)
+        setRequestCount((prevCount) => requestCount + 1)
         const requestCounts =
           JSON.parse(localStorage.getItem('requestCounts')) || {}
         requestCounts[new Date().toISOString()] = requestCount + 1
@@ -38,7 +38,7 @@ function App() {
     }
 
     fetchData()
-  }, [])
+  }, [setRequestCount])
 
   const requestCounts = JSON.parse(localStorage.getItem('requestCounts')) || {}
   const totalRequests = requestCounts

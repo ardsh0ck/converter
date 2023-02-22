@@ -9,7 +9,6 @@ const Converter = ({ data }) => {
   const [toCurrency, setToCurrency] = useState(1)
 
   const getValue = Number(fromAmount * (fromCurrency / toCurrency)).toFixed(2)
-  console.log(getValue)
 
   useEffect(() => {
     setToAmount(getValue)
@@ -18,7 +17,7 @@ const Converter = ({ data }) => {
   return (
     <form className={styles.converter}>
       <fieldset className={styles.converterItem}>
-        <label htmlFor="chnage">
+        <label htmlFor="change">
           <span className={styles.converterLabel}>Change</span>
           <input
             className={styles.converterInput}
@@ -29,10 +28,12 @@ const Converter = ({ data }) => {
           />
         </label>
 
-        <label>
+        <label htmlFor="fromCurrency">
+          <span className="h-0 w-0 overflow-hidden">From currency</span>
           <select
             className={styles.converterSelect}
             onChange={(event) => setFromCurrency(event.target.value)}
+            id="fromCurrency"
           >
             <option value={1}>UAH</option>
             {data?.map((item, index) => (
@@ -58,10 +59,12 @@ const Converter = ({ data }) => {
           />
         </label>
 
-        <label>
+        <label htmlFor="toCurrency">
+          <span className="h-0 w-0 overflow-hidden">To currency</span>
           <select
             className={styles.converterSelect}
             onChange={(event) => setToCurrency(event.target.value)}
+            id="toCurrency"
           >
             <option value={1}>UAH</option>
             {data?.map((item, index) => (
