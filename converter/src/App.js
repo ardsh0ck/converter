@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import styles from './App.module.scss'
 import Header from './components/Header/Header'
 import Table from './components/Table/Table'
@@ -18,17 +18,17 @@ function App() {
   const [currency, setCurrency] = useState()
   const [error, setError] = useState('')
   const [isLoading, setIsLoading] = useState(true)
-  const [requestCount, setRequestCount] = useState(0)
+  const requestCountRef = useRef(0)
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch(API_URL, requestOptions)
         const currency = await response.json()
-        setRequestCount((prevCount) => requestCount + 1)
+        requestCountRef.current = requestCountRef.current + 1
         const requestCounts =
           JSON.parse(localStorage.getItem('requestCounts')) || {}
-        requestCounts[new Date().toISOString()] = requestCount + 1
+        requestCounts[new Date().toISOString()] = requestCountRef.current
         localStorage.setItem('requestCounts', JSON.stringify(requestCounts))
         setCurrency(currency)
       } catch (error) {
@@ -38,12 +38,14 @@ function App() {
     }
 
     fetchData()
-  }, [setRequestCount])
+  }, [])
 
   const requestCounts = JSON.parse(localStorage.getItem('requestCounts')) || {}
   const totalRequests = requestCounts
     ? Object.values(requestCounts).reduce((acc, count) => acc + count, 0)
     : 0
+
+  console.log(requestCounts)
 
   return (
     <div className={styles.app}>

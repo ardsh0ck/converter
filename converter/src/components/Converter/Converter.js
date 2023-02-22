@@ -29,7 +29,7 @@ const Converter = ({ data }) => {
         </label>
 
         <label htmlFor="fromCurrency">
-          <span className="h-0 w-0 overflow-hidden">From currency</span>
+          <span className="block h-0 w-0 overflow-hidden">From currency</span>
           <select
             className={styles.converterSelect}
             onChange={(event) => setFromCurrency(event.target.value)}
@@ -60,7 +60,7 @@ const Converter = ({ data }) => {
         </label>
 
         <label htmlFor="toCurrency">
-          <span className="h-0 w-0 overflow-hidden">To currency</span>
+          <span className="block h-0 w-0 overflow-hidden">To currency</span>
           <select
             className={styles.converterSelect}
             onChange={(event) => setToCurrency(event.target.value)}
