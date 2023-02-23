@@ -5,13 +5,11 @@ import Table from './components/Table/Table'
 import Footer from './components/Footer/Footer'
 import Converter from './components/Converter/Converter'
 
-const API_URL =
-  'https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5'
+const API_URL = 'https://ardshock.name/p24api'
 
 const requestOptions = {
   method: 'GET',
   redirect: 'follow',
-  mode: 'no-cors',
 }
 
 function App() {
@@ -45,7 +43,7 @@ function App() {
     ? Object.values(requestCounts).reduce((acc, count) => acc + count, 0)
     : 0
 
-  console.log(requestCounts)
+  console.log(currency)
 
   return (
     <div className={styles.app}>

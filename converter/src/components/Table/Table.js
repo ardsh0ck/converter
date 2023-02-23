@@ -7,7 +7,7 @@ const Table = ({ data, totalRequests, isLoading, error }) => {
   if (error || totalRequests % 5 === 0) {
     return (
       <h1 className={styles.tableError}>
-        {error ? `Error:{error}` : 'Something weng wrong'}
+        {error ? `Error: ${error}` : 'Something weng wrong'}
       </h1>
     )
   }
